@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
 
-const Login = () => {
-    const handleLogin = e => {
+const Signup = () => {
+    const handleSignup = e => {
         e.preventDefault();
     }
     return (
@@ -13,8 +13,14 @@ const Login = () => {
                     <img className='w-3/4 mx-auto' src={img} alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20">
-                    <form onSubmit={handleLogin} className="card-body">
-                        <h1 className="text-5xl text-center font-bold">Login</h1>
+                    <form onSubmit={handleSignup} className="card-body">
+                        <h1 className="text-5xl text-center font-bold">Sign Up</h1>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" placeholder="Your Name" name='name' className="input input-bordered" />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -25,22 +31,17 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" placeholder="password"
-                                name='password'
-                                className="input input-bordered" />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                            <input type="text" placeholder="password" name='password' className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                            <input type="submit" className="btn btn-primary" value="Login" />
+                            <input type="submit" className="btn btn-primary" value="Sign Up" />
                         </div>
                     </form>
-                    <p className='text-center'>New to Genius Car?<Link className='text-orange-600 font-bold' to='/signup'>Sign Up</Link></p>
+                    <p className='text-center'>Already have an account?<Link className='text-orange-600 font-bold' to='/login'>Login</Link></p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Signup;
