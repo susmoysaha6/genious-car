@@ -5,6 +5,7 @@ import img from '../../assets/images/login/login.svg'
 const Login = () => {
     const handleLogin = e => {
         e.preventDefault();
+
     }
     return (
         <div className="hero w-full my-20">
