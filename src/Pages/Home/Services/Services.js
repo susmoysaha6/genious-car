@@ -4,7 +4,7 @@ import ServiceCard from './ServiceCard';
 const Services = () => {
     const [services, SetServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://genius-car-server-gilt.vercel.app/services')
             .then(res => res.json())
             .then(data => SetServices(data))
     }, [])
